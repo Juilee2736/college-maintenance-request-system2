@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        College Maintenance Request System
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+    <!-- HEADER -->
+
+    <header class="app-header">
+
+        <div class="college-brand">
+
+            <img
+                src="c:\Users\juilee\Documents\mini project\SEM V\phcet.jpeg"
+                alt="College Logo"
+            >
+
+            <div>
+
+                <h2>
+                    Pillai HOC College of Engineering and Technology
+                </h2>
+
+                <p>
+                    College Maintenance Request System
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="app-nav">
+
+            <a class="active"
+               href="student-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="report.html">
+                New Request
+            </a>
+
+            <a href="requests.html">
+                My Requests
+            </a>
+
+           <button
+    type="button"
+    onclick="logout()"
+>
+    Logout
+</button>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="page-shell">
+
+
+        <!-- TITLE -->
+
+        <section class="page-heading">
+
+            <h1>
+                Student
+            </h1>
+
+            <p>
+                Report and track college maintenance issues easily.
+            </p>
+
+        </section>
+
+
+        <!-- DASHBOARD OPTIONS -->
+
+        <section class="dashboard-options">
+
+
+            <!-- NEW REQUEST -->
+
+            <a
+                class="feature-card"
+                href="report.html">
+
+                <div class="feature-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    New Maintenance Request
+                </h3>
+
+                <p>
+                    Report a new maintenance problem.
+                </p>
+
+            </a>
+
+
+            <!-- MY REQUESTS -->
+
+            <a
+                class="feature-card"
+                href="requests.html">
+
+                <div class="feature-icon">
+                    📋
+                </div>
+
+                <h3>
+                    My Requests
+                </h3>
+
+                <p>
+                    View maintenance requests submitted by you.
+                </p>
+
+            </a>
+
+
+            <!-- TRACK -->
+
+            <a
+                class="feature-card"
+                href="#track-request">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Track Request
+                </h3>
+
+                <p>
+                    Check the current status of a request.
+                </p>
+
+            </a>
+
+
+            <!-- GUIDELINES -->
+
+           <a
+           class="feature-card"
+           href="maintenance-guidelines.html">
+                <div class="feature-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Maintenance Guidelines
+                </h3>
+
+                <p>
+                    Know the proper way to report issues.
+                </p>
+
+            </a>
+
+
+            <!-- HELP -->
+
+            <!-- HELP -->
+
+<a
+    class="feature-card"
+    href="help-support.html">
+
+    <div class="feature-icon">
+        ❓
+    </div>
+
+    <h3>
+        Help &amp; Support
+    </h3>
+
+    <p>
+        Get help regarding maintenance requests.
+    </p>
+
+</a>
+        </section>
+
+
+        <!-- TRACK REQUEST -->
+
+        <section
+            class="content-card track-card"
+            id="track-request">
+
+            <h2>
+                Track Request
+            </h2>
+
+            <p>
+                Enter your request ID to check its current status.
+            </p>
+
+
+            <div class="track-form">
+
+                <input
+                    id="trackId"
+                    type="text"
+                    placeholder="Enter Request ID e.g. MR001"
+                >
+
+
+                <button
+                    class="dark-btn"
+                    onclick="trackStudentRequest()">
+
+                    Track
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="trackResult">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="simple-footer">
+        College Maintenance Request System
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

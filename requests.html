@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        College Maintenance - My Requests
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="app-header">
+
+
+        <!-- COLLEGE BRAND -->
+
+        <div class="college-brand">
+
+            <img
+                src="c:\Users\juilee\Documents\mini project\SEM V\phcet.jpeg"
+                alt="College Logo"
+            >
+
+            <div>
+
+                <h2>
+                    Pillai HOC College of Engineering and Technology
+                </h2>
+
+                <p>
+                    College Maintenance Request System
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             NAVIGATION
+        =========================== -->
+
+        <nav class="app-nav">
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                class="active"
+                href="student-dashboard.html"
+            >
+                Dashboard
+            </a>
+
+
+            <!-- NEW REQUEST -->
+
+            <a
+                href="report.html"
+            >
+                New Request
+            </a>
+
+
+            <!-- MY REQUESTS -->
+
+            <a
+                href="requests.html"
+            >
+                My Requests
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <button
+    type="button"
+    onclick="logout()"
+>
+    Logout
+</button>
+
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="page-shell">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <h1>
+                My Requests
+            </h1>
+
+            <p>
+                View the maintenance requests submitted by you.
+            </p>
+
+        </section>
+
+
+        <!-- ==========================
+             REQUESTS CARD
+        =========================== -->
+
+        <section class="content-card">
+
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="request-toolbar">
+
+
+                <!-- SEARCH -->
+
+                <input
+                    id="requestSearch"
+                    type="search"
+                    placeholder="Search request ID, issue or location..."
+                    oninput="renderMyRequests()"
+                >
+
+
+                <!-- FILTER -->
+
+                <select
+                    id="requestFilter"
+                    onchange="renderMyRequests()"
+                >
+
+                    <option value="All">
+                        All
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+            <!-- REQUEST LIST -->
+
+            <div id="myRequestsList">
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer class="simple-footer">
+
+        College Maintenance Request System
+
+    </footer>
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Maintenance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <!-- COLLEGE BRAND -->
+        <div class="login-brand">
+
+            <img
+                src="c:\Users\juilee\Documents\mini project\SEM V\phcet.jpeg"
+                alt="College Logo"
+            >
+
+            <div>
+                <h1>
+                    Pillai HOC College of Engineering and Technology
+                </h1>
+
+                <p>
+                    College Maintenance Request System
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+        <div class="login-card">
+
+            <h2>
+                Welcome to College Maintenance Request System
+            </h2>
+
+            <p class="login-subtitle">
+                Login to continue
+            </p>
+
+
+            <!-- LOGIN TYPE -->
+            <div class="login-tabs">
+
+                <button
+                    type="button"
+                    class="login-tab active"
+                    id="studentTab"
+                    onclick="selectLoginType('student')">
+                    Student
+                </button>
+
+                <button
+                    type="button"
+                    class="login-tab"
+                    id="adminTab"
+                    onclick="selectLoginType('admin')">
+                    Admin
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+
+                <input
+                    type="hidden"
+                    id="loginType"
+                    value="student"
+                >
+
+
+                <label for="loginId">
+                    Login ID
+                </label>
+
+                <input
+                    type="text"
+                    id="loginId"
+                    placeholder="Enter Login ID"
+                    autocomplete="username"
+                    required
+                >
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+
+                <p
+                    id="loginError"
+                    class="error-message">
+                </p>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN SCRIPT -->
+    <script>
+
+        /* ==========================
+           SELECT LOGIN TYPE
+        ========================== */
+
+        function selectLoginType(type) {
+
+            document.getElementById("loginType").value = type;
+
+            const studentTab =
+                document.getElementById("studentTab");
+
+            const adminTab =
+                document.getElementById("adminTab");
+
+            if (type === "student") {
+
+                studentTab.classList.add("active");
+                adminTab.classList.remove("active");
+
+            } else {
+
+                adminTab.classList.add("active");
+                studentTab.classList.remove("active");
+
+            }
+
+            // Clear previous error
+            document.getElementById("loginError").textContent = "";
+
+            // Clear fields
+            document.getElementById("loginId").value = "";
+            document.getElementById("loginPassword").value = "";
+
+        }
+
+
+        /* ==========================
+           LOGIN
+        ========================== */
+
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const type =
+                    document.getElementById("loginType").value;
+
+                const id =
+                    document.getElementById("loginId").value.trim();
+
+                const password =
+                    document.getElementById("loginPassword").value;
+
+                const error =
+                    document.getElementById("loginError");
+
+
+                /* ==========================
+                   STUDENT LOGIN
+                ========================== */
+
+                if (
+                    type === "student" &&
+                    id === "student" &&
+                    password === "1234"
+                ) {
+
+                    localStorage.setItem(
+                        "College Maintenance_user",
+                        "student"
+                    );
+
+                    window.location.href =
+                        "student-dashboard.html";
+
+                    return;
+                }
+
+
+                /* ==========================
+                   ADMIN LOGIN
+                ========================== */
+
+                if (
+                    type === "admin" &&
+                    id === "admin" &&
+                    password === "admin123"
+                ) {
+
+                    localStorage.setItem(
+                        "College Maintenance_user",
+                        "admin"
+                    );
+
+                    window.location.href =
+                        "admin-dashboard.html";
+
+                    return;
+                }
+
+
+                /* ==========================
+                   INVALID LOGIN
+                ========================== */
+
+                error.textContent =
+                    "Invalid Login ID or Password.";
+
+            });
+
+    </script>
+
+</body>
+</html>

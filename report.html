@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        College Maintenance - New Maintenance Request
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="app-page">
+
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="app-header">
+
+
+        <!-- COLLEGE BRAND -->
+
+        <div class="college-brand">
+
+            <img
+                src="c:\Users\juilee\Documents\mini project\SEM V\phcet.jpeg"
+                alt="College Logo"
+            >
+
+            <div>
+
+                <h2>
+                    Pillai HOC College of Engineering and Technology
+                </h2>
+
+                <p>
+                    College Maintenance Request System
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             FIXED NAVIGATION
+        =========================== -->
+
+        <nav class="app-nav">
+
+
+            <a
+                class="active"
+                href="student-dashboard.html"
+            >
+                Dashboard
+            </a>
+
+
+            <a
+                href="report.html"
+            >
+                New Request
+            </a>
+
+
+            <a
+                href="requests.html"
+            >
+                My Requests
+            </a>
+
+
+            <button
+    type="button"
+    onclick="logout()"
+>
+    Logout
+</button>
+
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="page-shell narrow-shell">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <h1>
+                New Maintenance Request
+            </h1>
+
+            <p>
+                Submit a maintenance issue with the required details.
+            </p>
+
+        </section>
+
+
+        <!-- ==========================
+             REQUEST FORM
+        =========================== -->
+
+        <section class="form-card">
+
+            <form id="requestForm">
+
+
+                <!-- ISSUE CATEGORY -->
+
+                <label for="category">
+                    Issue Category
+                </label>
+
+                <select
+                    id="category"
+                    required
+                >
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option>
+                        Electrical
+                    </option>
+
+                    <option>
+                        Washroom
+                    </option>
+
+                    <option>
+                        Plumbing
+                    </option>
+
+                    <option>
+                        Furniture
+                    </option>
+
+                    <option>
+                        Classroom
+                    </option>
+
+                    <option>
+                        Cleanliness
+                    </option>
+
+                    <option>
+                        Network / Internet
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+
+                <!-- ISSUE TITLE -->
+
+                <label for="title">
+                    Issue Title
+                </label>
+
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Example: Fan not Working"
+                    required
+                >
+
+
+                <!-- LOCATION -->
+
+                <label for="location">
+                    Room / Location
+                </label>
+
+                <input
+                    id="location"
+                    type="text"
+                    placeholder="Example: A102, B105, Office"
+                    required
+                >
+
+
+                <!-- DESCRIPTION -->
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Describe the problem clearly."
+                    required
+                ></textarea>
+
+
+                <!-- PHOTO -->
+
+                <label for="photo">
+                    Upload Photo
+                </label>
+
+                <input
+                    id="photo"
+                    type="file"
+                    accept="image/*"
+                >
+
+
+                <!-- PHOTO PREVIEW -->
+
+                <div
+                    id="photoPreview"
+                    class="photo-preview"
+                >
+                </div>
+
+
+                <!-- FORM MESSAGE -->
+
+                <p
+                    id="formMessage"
+                    class="form-message"
+                >
+                </p>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    class="dark-btn full-width"
+                    type="submit"
+                >
+                    Submit Request
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer class="simple-footer">
+
+        College Maintenance Request System
+
+    </footer>
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
